@@ -675,6 +675,7 @@ public class NovelCobblerFrame extends javax.swing.JFrame {
                     // VV unnecessary work--eventually have TP count for you
                     countWords();
                     goal = wordCount;
+                    updateWords();
                     nanoCheck.setSelected(false);
                 }
             }
