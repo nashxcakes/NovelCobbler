@@ -101,7 +101,7 @@ public class SentenceParser {
         for (String word : words) {
             if (!word.isEmpty() && Character.isUpperCase(word.charAt(0))) {
                 //System.out.println("|||" + word + "|||");
-                word = word.replace("\\.|\\,|\\!|\\?|\\-|\\\"|\\)", "");
+                word = word.replaceAll("\\.|\\,|\\!|\\?|\\-|\\\"|\\)", "");
                 tags.add(new Tag(word));
             }
         }
