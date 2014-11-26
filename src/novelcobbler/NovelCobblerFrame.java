@@ -779,6 +779,8 @@ public class NovelCobblerFrame extends javax.swing.JFrame {
     }
     
     private void cobble() {
+        setCursor(java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.WAIT_CURSOR));
+            
         String title = titleField.getText();
         if(title.isEmpty()) title = "novel";
         title = title.replace(".", "");
@@ -814,10 +816,15 @@ public class NovelCobblerFrame extends javax.swing.JFrame {
                 PrintWriter printer = new PrintWriter(fileName);
                 printer.print(novel);
                 printer.close();
+                JOptionPane.showMessageDialog(null, 
+                        "Cobble complete.");
             } catch(FileNotFoundException e) {
                 JOptionPane.showMessageDialog(null, 
                         "Save failed--File Not Found.");
             }
+            
+            setCursor(java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.DEFAULT_CURSOR));
+            
         }
     }
 }
