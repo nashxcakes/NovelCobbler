@@ -22,9 +22,9 @@ public class Sentence implements Serializable {
     public Sentence(String s) {
         sentence = s;
         checkSyntax();
-        System.out.println("Sentence: " + get());
+        //System.out.println("Sentence: " + get());
         wordCount = countWords();
-        System.out.println("Word count: " + wordCount);
+        //System.out.println("Word count: " + wordCount);
         tags = new ArrayList<Tag>();       
     }
     
