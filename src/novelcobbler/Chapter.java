@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @author nash
  */
 public class Chapter {
+    private static String nl = System.getProperty("line.separator");
     private ArrayList<Paragraph> paragraphs;
     private ArrayList<Tag> tags;
     
@@ -62,7 +63,7 @@ public class Chapter {
             temp = temp.concat(paragraphs.get(i).toString());
             
             if(i != paragraphs.size() - 1) {
-                temp = temp.concat("\n");
+                temp = temp.concat(nl);
             }
         }
         

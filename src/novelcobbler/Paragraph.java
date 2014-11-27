@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @author nash
  */
 public class Paragraph {
+    private static String nl = System.getProperty("line.separator");
     private ArrayList<Sentence> sentences;
     private ArrayList<Tag> tags;
     
@@ -81,7 +82,8 @@ public class Paragraph {
             
             if(i != sentences.size() - 1) {
                 if(sentences.get(i).isDialog()) {
-                    temp = temp.concat("\n\t");
+                    //temp = temp.concat("\n\t");
+                    temp = temp.concat(nl + "\t");
                 } else {
                     temp = temp.concat(" ");
                 }

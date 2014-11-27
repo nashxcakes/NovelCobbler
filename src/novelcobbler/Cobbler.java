@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @author nash
  */
 public class Cobbler {
+    private static String nl = System.getProperty("line.separator");
     private static final double PARA_COEF = 1.2;
     private static final int PARA_SHIFT = 1;
     
@@ -72,14 +73,14 @@ public class Cobbler {
             }
         }
         
-        String novel = "\t\t\t\t" + title + "\n\n";
+        String novel = "\t\t\t\t" + title + nl + nl;
         
         for(int i = 0; i < chapters.size(); i++) {
-            novel = novel.concat(CHAPTER_HEAD + (i + 1) + "\n");
+            novel = novel.concat(CHAPTER_HEAD + (i + 1) + nl);
             novel = novel.concat(chapters.get(i).toString());
             
             if(i != chapters.size() - 1) {
-                novel = novel.concat("\n");
+                novel = novel.concat(nl);
             }
         }
         
