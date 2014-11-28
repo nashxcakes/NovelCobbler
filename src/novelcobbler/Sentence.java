@@ -8,7 +8,6 @@ package novelcobbler;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 
 /**
  *
@@ -62,7 +61,7 @@ public class Sentence implements Serializable {
     
     private int countWords() {
         String[] words = sentence.split(" |\t|\n|\r|\f");
-        System.out.println("words length: " + words.length);
+        //System.out.println("words length: " + words.length);
         int temp = 0;
         
         for (String word : words) {

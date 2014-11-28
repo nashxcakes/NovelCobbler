@@ -37,13 +37,13 @@ public class SentenceParser {
         int index = -1;
         int temp = text.indexOf('.');
 
-        if (temp < 0) {
+        if (temp < 0 || text.indexOf('!') < temp) {
             temp = text.indexOf('!');
 
-            if (temp < 0) {
+            if (temp < 0 || text.indexOf('?') < temp) {
                 temp = text.indexOf('?');
 
-                if (temp < 0) {
+                if (temp < 0 || text.indexOf('\n') < temp) {
                     temp = text.indexOf('\n');
 
                     if (temp >= 0) {
@@ -65,19 +65,18 @@ public class SentenceParser {
             }
             index++;
 
-            String tempString = text.substring(0, index);
+            String tempString = text.substring(0, index).trim();
             text = text.substring(index);
-
-            if (tempString.endsWith("\"") && !tempString.startsWith("\"")) {
-                tempString = "\"".concat(tempString);
-            } else if (tempString.startsWith("\"")
-                    && !tempString.endsWith("\"")) {
+            
+            if(text.length() > 0 && text.charAt(0) == '\"') {
+                text = text.substring(1);
                 tempString = tempString.concat("\"");
             }
+            
             String[] bundle = {tempString, text};
             return bundle;
         } else {
-            String[] bundle = {text, ""};
+            String[] bundle = { text, "" };
             return bundle;
         }
     }
